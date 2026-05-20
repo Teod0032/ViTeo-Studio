@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App-Innovation - Teodor Kristensen</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-weight='bold' font-family='Arial, sans-serif' fill='%231a1a1a'>T</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="background-canvas"></canvas>
+    <canvas id="trail-canvas"></canvas>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span id="typewriter">Teodor.</span><span class="blinking-cursor"></span>
+            </a>
+            <div class="links">
+                <a href="index.html#om-mig-cta">Om Mig</a>
+                <a href="index.html#projekter">Projekter</a>
+                <button id="theme-toggle" class="btn-theme">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <section class="project-hero fade-in">
+            <a href="index.html" class="back-link">← Tilbage til oversigten</a>
+            <h1>App-Innovation: Fra vision til funktion</h1>
+            <p class="project-goal"><strong>Fokus: Stackr & Task Bars.</strong><br>Mål: At demonstrere lynhurtig eksekvering af komplekse UI/UX-koncepter gennem 100% AI-genereret kode baseret på egne designs.</p>
+            
+            <div class="project-hero-banner" style="background-image: url('images/apps-hero.jpg'); background-size: cover; background-position: center; border-radius: 8px;"></div>
+        </section>
+
+        <section class="project-split fade-in">
+            <div class="split-text">
+                <h2>Udfordringen: Broen mellem design og funktion</h2>
+                <p>Som designer er målet ikke blot at skabe statiske billeder, men fungerende produkter. Min udfordring har været at bevise, at en stærk visuel vision kan transformeres til fuldt funktionelle app-oplevelser uden manuel kodning.</p>
+                <p>Dette er opnået ved strategisk at udnytte AI som den tekniske motor i maskinrummet, og bygge broen fra idé til eksekvering på rekordtid.</p>
+            </div>
+            <div class="split-image" style="background-image: url('images/apps-process.jpg'); background-size: cover; background-position: center; border-radius: 8px;"></div>
+        </section>
+
+        <section class="portfolio" style="margin-bottom: 8rem;">
+            <h2 class="fade-in" style="text-align: center; margin-bottom: 4rem; font-size: 2.2rem;">Løsningen: "Vibecoded" UX-Cases</h2>
+            <div class="project-list">
+                
+                <article class="project-row fade-in">
+                    <div class="project-image" style="height: 600px; background-image: url('images/taskbars-demo.jpg'); background-size: cover; background-position: center; border-radius: 8px;"></div>
+                    <div class="project-text">
+                        <h3>Task Bars – Gamified To-Do & Timeline</h3>
+                        <p><strong>Funktion:</strong> En produktivitets-app, der transformerer den klassiske to-do liste til en gamificeret tidslinje.</p>
+                        <p><strong>Design-filosofi:</strong> Visuel prioritering gennem farvekodede "bars" på en tidslinje. Jo vigtigere opgaven er, jo tydeligere er den visuelle feedback.</p>
+                        <p><strong>Eksekvering:</strong> Et teknisk showcase af, hvordan komplekse logikker (tidslinjer og farvekoder) kan bygges fejlfrit via AI-prompts.</p>
+                    </div>
+                </article>
+
+                <article class="project-row reverse fade-in">
+                    <div class="project-image" style="height: 600px; background-image: url('images/stackr-ui.jpg'); background-size: cover; background-position: center; border-radius: 8px;"></div>
+                    <div class="project-text">
+                        <h3>Stackr – Progressive Overload Tracker</h3>
+                        <p><strong>Funktion:</strong> En dedikeret træningsapp fokuseret på progressive overload.</p>
+                        <p><strong>Design-filosofi:</strong> Minimalistisk og datadrevet interface, der gør det komplekse simpelt. Her er fokus på hurtig indtastning og visuel feedback på styrkefremgang.</p>
+                        <p><strong>Eksekvering:</strong> 100% AI-genereret kode, der sikrer en stabil og lynhurtig brugeroplevelse.</p>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="project-results fade-in">
+            <div class="results-box">
+                <h2>Strategisk Værdi som "Product Builder"</h2>
+                <p>Disse apps fungerer som dokumentation for min evne til at styre fremtidens arbejdsredskaber. Det viser bureauer, at jeg kan tage et koncept fra de første visuelle tanker til et færdigt, interaktivt produkt på rekordtid.</p>
+                
+                <div style="margin-top: 3rem; padding: 2rem; background-color: var(--bg-color); border-radius: 8px; border: 1px dashed var(--accent-color); text-align: left;">
+                    <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--accent-color);">🛠 Teknisk Workflow</h3>
+                    <p style="font-size: 0.95rem; margin-bottom: 0;"><strong>Metode:</strong> 100% "Vibecoding" (AI-genereret kode ud fra designprompts).<br>
+                    <strong>Værktøjer:</strong> Gemini 2.5 pro kombineret med egne UI-designs fra Figma. Apps er bygget med Expo og kan downloades og afprøves på Android.</p>
+                </div>
+            </div>
+            
+            <div class="final-mockup" style="background-image: url('images/apps-workflow.jpg'); background-size: cover; background-position: center; border-radius: 8px; width: 100%;"></div>
+        </section>
+
+        <section class="next-project fade-in">
+            <a href="om-mig.html" class="btn-cta btn-secondary">Lær mig bedre at kende →</a>
+        </section>
+
+    </main>
+
+    <footer class="fade-in">
+        <p>&copy; 2026 Teodor Kristensen. Kontakt: teokri01@gmail.com</p>
+    </footer>
+
+    <div id="mobile-popup" class="mobile-popup">
+        <div class="popup-content">
+            <p>Denne portefølje opleves bedst på en PC, hvor du kan se den fulde HTML-magi med interaktive effekter! ✨</p>
+            <button id="close-popup" class="btn-cta">Forstået, jeg kigger videre</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

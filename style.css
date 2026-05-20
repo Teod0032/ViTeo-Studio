@@ -1,0 +1,298 @@
+:root {
+    --bg-color: #fdfdfd;
+    --text-main: #1a1a1a;
+    --text-muted: #666666;
+    --card-border: #eaeaea;
+    --card-bg: #f0f0f0;
+    --accent-color: #4338ca;
+    --accent-color-rgb: 67, 56, 202; 
+    --accent-hover: #3730a3;
+    --font-family: 'Outfit', 'Helvetica Neue', Arial, sans-serif;
+    --drip-color: #9333ea; 
+}
+
+[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-main: #ededed;
+    --text-muted: #a0a0a0;
+    --card-border: #2a2a2a;
+    --card-bg: #1e1e1e;
+    --accent-color: #6366f1; 
+    --accent-color-rgb: 99, 102, 241;
+    --accent-hover: #818cf8;
+    --drip-color: #d8b4fe;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+    font-family: var(--font-family); 
+    background-color: var(--bg-color); 
+    color: var(--text-main); 
+    line-height: 1.6; 
+    transition: background-color 0.5s ease, color 0.5s ease; 
+    -webkit-font-smoothing: antialiased; 
+    overflow-x: hidden; 
+}
+
+/* Canvas Lagsdeling */
+#trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; 
+    z-index: 1; 
+}
+
+header, main, footer {
+    position: relative;
+    z-index: 2; 
+}
+
+/* Header & Nav */
+header { padding: 2.5rem 3%; } /* Mindre padding for at få nav bredere ud */
+nav { display: flex; justify-content: space-between; align-items: center; max-width: 1600px; margin: 0 auto; } /* Skruet massivt op fra 1200px */
+
+/* Statisk Logo & Tekst */
+.logo { 
+    display: flex; 
+    align-items: center; 
+    gap: 1.2rem;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover { opacity: 0.8; }
+
+.logo-img {
+    height: 85px; 
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    font-weight: 600; 
+    font-size: 1.6rem; 
+    color: var(--text-muted); 
+    letter-spacing: -0.02em; 
+    transition: color 0.3s ease;
+}
+
+/* Navigationslinks i højre side */
+.links { display: flex; align-items: center; gap: 2.5rem; }
+.links a { 
+    color: var(--text-muted); 
+    text-decoration: none; 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.3s ease, transform 0.3s ease; 
+}
+.links a:hover { 
+    color: var(--accent-color); 
+}
+
+/* Dynamisk SVG Temaknap */
+.btn-theme { 
+    background: transparent; 
+    border: none; 
+    cursor: pointer; 
+    padding: 0.6rem; 
+    color: var(--text-muted); 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-theme:hover { 
+    color: var(--accent-color); 
+    background-color: var(--card-bg); 
+}
+
+.sun-icon { display: none; }
+.moon-icon { display: block; }
+
+[data-theme="dark"] .sun-icon { display: block; }
+[data-theme="dark"] .moon-icon { display: none; }
+
+/* Skruet massivt op fra 1200px til 1600px */
+main { max-width: 1600px; margin: 0 auto; padding: 0 3%; } 
+
+/* =======================================================================
+   NYT EDITORIAL 3-KOLONNE GRID
+   ======================================================================= */
+.portfolio { padding-bottom: 8rem; }
+
+.project-grid { 
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 2rem; /* Tættere gap gør billederne endnu større! */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+/* Højt editorial format (4:5) */
+.project-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 8px; 
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    transition: border-color 0.5s ease;
+}
+
+.project-image { 
+    width: 100%; 
+    height: 100%; 
+    background-size: cover; 
+    background-position: center; 
+    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); 
+}
+
+/* Typografi under billedet skaleret lidt op til de nye store billeder */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem;
+}
+
+.project-info h3 { 
+    font-size: 1.3rem; /* Større tekst! */
+    margin: 0 0 0.4rem 0; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 0.03em; 
+    transition: color 0.3s ease;
+}
+
+.project-tag {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-muted);
+}
+
+/* Editorial Hover Effects */
+.project-card:hover .project-image-wrapper {
+    border-color: var(--text-muted);
+}
+.project-card:hover .project-image { 
+    transform: scale(1.05); 
+}
+.project-card:hover .project-info h3 {
+    color: var(--accent-color);
+}
+
+/* ======================================================================= */
+
+/* Forside Hero - Justeret størrelser for bredere skærm */
+.hero { display: flex; align-items: center; gap: 6rem; padding: 10rem 0 8rem 0; border-top: 1px solid var(--card-border); }
+.hero-text { flex: 1.2; }
+.hero-text h1 { font-size: 4.5rem; font-weight: 700; letter-spacing: -0.04em; margin-bottom: 1.5rem; line-height: 1.1; }
+.hero-text p { font-size: 1.35rem; color: var(--text-muted); font-weight: 400; max-width: 800px; }
+
+.hero-image { flex: none; background-color: var(--card-bg); border-radius: 50%; border: 1px solid var(--card-border); transition: background-color 0.5s ease; cursor: pointer; }
+.hero-image:hover { animation: coinSpin 1.2s cubic-bezier(0.45, 0.05, 0.55, 0.95); }
+
+@keyframes coinSpin {
+    0% { transform: perspective(1000px) rotateY(0deg) scale(1); }
+    50% { transform: perspective(1000px) rotateY(180deg) scale(1.05); }
+    100% { transform: perspective(1000px) rotateY(360deg) scale(1); }
+}
+
+/* Om Mig CTA med Dæmpet, Langsom Vertikal Gradient */
+.about-cta { 
+    display: block;
+    text-decoration: none;
+    color: #1a1a1a !important; 
+    background: linear-gradient(180deg, #3A35C5, #C535A8, #3A35C5);
+    background-size: 100% 400%;
+    animation: gradientFlow 24s ease infinite; 
+    padding: 6rem 2rem 10rem 2rem; 
+    border-radius: 12px; 
+    text-align: center; 
+    margin-bottom: 10rem; 
+    border: none; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; 
+}
+
+.about-cta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.about-cta h2 { font-size: 2.8rem; margin-bottom: 1rem; position: relative; z-index: 2; pointer-events: none; color: #ffffff; text-shadow: 0 2px 10px rgba(0,0,0,0.2); font-weight: 600; }
+.about-cta p { font-size: 1.25rem; color: #ffffff; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; pointer-events: none; text-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+.about-cta .btn-secondary { border-color: #ffffff; color: #ffffff !important; background-color: rgba(255, 255, 255, 0.1); font-weight: 500; font-size: 1.1rem; padding: 1.2rem 2.5rem; }
+.about-cta:hover .btn-secondary { background-color: #ffffff; color: #1a1a1a !important; }
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+
+.cursor-follower { position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.3s ease; pointer-events: none; z-index: 1; }
+
+/* Knapper */
+.btn-cta { display: inline-block; padding: 1.2rem 2.5rem; background-color: var(--accent-color); color: #ffffff !important; text-decoration: none; font-weight: 600; border-radius: 50px; transition: background-color 0.3s ease, transform 0.3s ease; letter-spacing: 0.02em; }
+.btn-cta:hover { background-color: var(--accent-hover); transform: scale(1.05); }
+.btn-secondary { background-color: transparent; border: 2px solid var(--accent-color); color: var(--text-main) !important; }
+
+/* Footer & Utils */
+footer { max-width: 1600px; margin: 0 auto; padding: 2rem 3% 4rem 3%; border-top: 1px solid var(--card-border); color: var(--text-muted); font-size: 0.95rem; transition: border-color 0.5s ease; }
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.mobile-popup { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8); z-index: 1000; justify-content: center; align-items: center; padding: 2rem; }
+.popup-content { background-color: var(--bg-color); padding: 2.5rem; border-radius: 12px; text-align: center; max-width: 400px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+.popup-content p { font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-main); }
+
+/* =======================================================================
+   RESPONSIVT DESIGN (Mobil & Tablet)
+   ======================================================================= */
+@media (max-width: 1200px) {
+    /* Falder tilbage til 2 kolonner på store tablets */
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+    .hero { gap: 3rem; }
+    .hero-image { width: 350px !important; height: 350px !important; }
+}
+
+@media (max-width: 768px) {
+    /* 1 kolonne på mobil */
+    .project-grid { grid-template-columns: 1fr; gap: 3rem; }
+    
+    .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; padding: 4rem 0; border-top: none; }
+    .hero-image { width: 250px !important; height: 250px !important; margin: 0 auto; }
+    .hero-text h1 { font-size: 3rem; }
+    .hero-text p { font-size: 1.1rem; }
+    .cursor-follower { position: relative; top: auto; left: auto; transform: none !important; transition: none; display: inline-block; z-index: 2; pointer-events: auto; }
+    .about-cta { padding: 4rem 2rem; }
+    #trail-canvas { display: none !important; } 
+    .mobile-popup { display: flex; }
+}
+
+/* =======================================================================
+   IMAGE MODAL (Lightbox)
+   ======================================================================= */
+#image-modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0, 0, 0, 0.9); z-index: 9999; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; cursor: zoom-out; backdrop-filter: blur(5px); }
+#image-modal.show { opacity: 1; pointer-events: auto; }
+#modal-img { max-width: 90vw; max-height: 90vh; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); transform: scale(0.95); transition: transform 0.3s ease; object-fit: contain; }
+#image-modal.show #modal-img { transform: scale(1); }

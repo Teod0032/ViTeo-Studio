@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignedByRavn - Digital Design Bureau</title>
+    <link rel="icon" href="images/logo2026v2.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="trail-canvas"></canvas>
+    
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo2026v2.png" alt="Ravn Logo" class="logo-img">
+                <span class="logo-text">DesignedByRavn</span>
+            </a>
+            <div class="links">
+                <a href="#om-os-cta">Vores Historie</a>
+                <a href="#projekter">Cases</a>
+                <button id="theme-toggle" class="btn-theme" aria-label="Skift tema">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projekter" class="portfolio" style="padding-top: 2rem;">
+            <div class="project-grid">
+                
+                <a href="projekt-1.html" class="project-card fade-in">
+                    <div class="project-image-wrapper">
+                        <div class="project-image" style="background-image: url('images/clutchsplash.png');"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Clutch</h3>
+                        <span class="project-tag">Visuel Disruption & Identitet</span>
+                    </div>
+                </a>
+
+                <a href="projekt-2.html" class="project-card fade-in" style="transition-delay: 0.1s;">
+                    <div class="project-image-wrapper">
+                        <div class="project-image" style="background-image: url('images/fusionfront2.png');"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Fusion</h3>
+                        <span class="project-tag">Kategori & Ydelse</span>
+                    </div>
+                </a>
+
+                <a href="projekt-3.html" class="project-card fade-in" style="transition-delay: 0.2s;">
+                    <div class="project-image-wrapper">
+                        <div class="project-image" style="background-image: url('images/rollfront.png');"></div>
+                    </div>
+                    <div class="project-info">
+                        <h3>Roll</h3>
+                        <span class="project-tag">Kategori & Ydelse</span>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+        <section class="hero fade-in">
+            <div class="hero-text">
+                <h1>Digitalt design med kant</h1>
+                <p>Vi er et strategisk designbureau, der bygger bro mellem brutal æstetik og moderne teknologi. Vi transformerer komplekse ideer til kompromisløse digitale produkter.</p>
+            </div>
+            <div class="hero-image" style="background-image: url('images/me.jpg'); background-size: cover; background-position: center; width: 450px; height: 450px;"></div>
+        </section>
+
+        <a href="om-os.html" id="om-os-cta" class="about-cta fade-in">
+            <h2>Hvem er vi?</h2>
+            <p>DesignedByRavn drives af Teodor og João. Vi er et sammentømret team, der kombinerer strategisk designtænkning med lynhurtig, AI-drevet eksekvering. Vi skærer støjen fra og fokuserer på at bygge stærke brands.</p>
+            <div class="btn-cta btn-secondary cursor-follower">Mød teamet bag</div>
+        </a>
+
+        <section class="extra-notes fade-in" style="padding-bottom: 6rem; text-align: center;">
+            <div style="max-width: 700px; margin: 0 auto; padding: 3rem 2rem 0 2rem; border-top: 1px solid var(--card-border);">
+                <p style="font-size: 1rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    <em>Psst... dette site er bygget fra bunden og fungerer som et showcase af vores designtilgang og AI-kodningskompetencer.</em>
+                </p>
+                <p style="font-size: 0.95rem; color: var(--text-muted);">
+                    Se mere af vores visuelle arbejde og proces på vores <a href="https://www.youtube.com/@techteo_yt/featured" target="_blank" rel="noopener noreferrer" style="color: var(--accent-color); font-weight: 500; text-decoration: none;">YouTube-kanal</a>.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="fade-in">
+        <p>&copy; 2026 DesignedByRavn. Kontakt: teokri01@gmail.com</p>
+    </footer>
+
+    <div id="mobile-popup" class="mobile-popup">
+        <div class="popup-content">
+            <p>Denne portefølje opleves bedst på en PC, hvor du kan se den fulde HTML-magi med interaktive effekter! ✨</p>
+            <button id="close-popup" class="btn-cta">Forstået, vi kigger videre</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
